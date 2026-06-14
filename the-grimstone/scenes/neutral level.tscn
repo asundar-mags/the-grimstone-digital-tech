@@ -5,13 +5,38 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyc7c"]
 size = Vector2(1152, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p63fo"]
+size = Vector2(24, 688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii60h"]
+size = Vector2(20, 688)
+
 [node name="Node2D" type="Node2D" unique_id=761329231]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=8200041]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1800367071]
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1800367071]
 position = Vector2(576, 658)
 shape = SubResource("RectangleShape2D_dyc7c")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2034055460]
+position = Vector2(-12, 344)
+shape = SubResource("RectangleShape2D_p63fo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=516525774]
+position = Vector2(1162, 344)
+shape = SubResource("RectangleShape2D_ii60h")
+
 [node name="CharacterBody2D" parent="." unique_id=1091708930 instance=ExtResource("1_p63fo")]
 position = Vector2(578, 628)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=648484472]
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 687
+
+[node name="Floor" type="ColorRect" parent="." unique_id=409169658]
+offset_top = 648.0
+offset_right = 1152.0
+offset_bottom = 688.0
