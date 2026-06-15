@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bpppomjjqabyg"]
+
+[ext_resource type="Texture2D" uid="uid://cieqx1uy82jxl" path="res://assets/main menu.png" id="1_5hgee"]
+
+[node name="Control" type="Control" unique_id=411870673]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=1625368313]
+position = Vector2(575.9999, 324)
+scale = Vector2(0.5999999, 0.59999996)
+texture = ExtResource("1_5hgee")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2058118236]
+layout_mode = 0
+offset_left = 716.0
+offset_top = 355.0
+offset_right = 1121.0
+offset_bottom = 614.0
+
+[node name="Play Button" type="Button" parent="HBoxContainer" unique_id=239040517]
+layout_mode = 2
+text = "Play"
