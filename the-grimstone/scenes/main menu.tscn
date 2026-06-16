@@ -13,13 +13,21 @@ position = Vector2(575.9999, 324)
 scale = Vector2(0.5999999, 0.59999996)
 texture = ExtResource("1_5hgee")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2058118236]
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=2058118236]
 layout_mode = 0
-offset_left = 716.0
-offset_top = 355.0
-offset_right = 1121.0
-offset_bottom = 614.0
+offset_left = 535.0
+offset_top = 469.0
+offset_right = 691.0
+offset_bottom = 526.0
 
-[node name="Play Button" type="Button" parent="HBoxContainer" unique_id=239040517]
+[node name="Play Button" type="Button" parent="Buttons" unique_id=239040517]
 layout_mode = 2
 text = "Play"
+
+[node name="Options Button" type="Button" parent="Buttons" unique_id=1142655445]
+layout_mode = 2
+text = "Options"
+
+[node name="Exit Button" type="Button" parent="Buttons" unique_id=1213207450]
+layout_mode = 2
+text = "Exit"
