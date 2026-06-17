@@ -2,6 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://cieqx1uy82jxl" path="res://assets/main menu.png" id="1_5hgee"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hgee"]
+bg_color = Color(0.7058824, 0.47843137, 0.003921569, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
 [node name="Control" type="Control" unique_id=411870673]
 layout_mode = 3
 anchors_preset = 0
@@ -15,19 +29,31 @@ texture = ExtResource("1_5hgee")
 
 [node name="Buttons" type="HBoxContainer" parent="." unique_id=2058118236]
 layout_mode = 0
-offset_left = 535.0
-offset_top = 469.0
-offset_right = 691.0
-offset_bottom = 526.0
+offset_left = 429.0
+offset_top = 431.0
+offset_right = 961.0
+offset_bottom = 534.0
+theme_override_constants/separation = 50
 
 [node name="Play Button" type="Button" parent="Buttons" unique_id=239040517]
 layout_mode = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_5hgee")
 text = "Play"
 
 [node name="Options Button" type="Button" parent="Buttons" unique_id=1142655445]
 layout_mode = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_5hgee")
 text = "Options"
 
 [node name="Exit Button" type="Button" parent="Buttons" unique_id=1213207450]
 layout_mode = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_5hgee")
 text = "Exit"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=819287240]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
