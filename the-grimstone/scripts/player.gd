@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -550.0
 
 
 func _physics_process(delta: float) -> void:
@@ -23,3 +23,19 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _fire_map_entry(body: CharacterBody2D) -> void:
+	get_tree().change_scene_to_file("res://scenes/firemap.tscn")
+
+
+func _air_map_entry(body: CharacterBody2D) -> void:
+	get_tree().change_scene_to_file("res://scenes/airmap.tscn")
+
+
+func _water_map_entry(body: CharacterBody2D) -> void:
+	get_tree().change_scene_to_file("res://scenes/watermap.tscn")
+
+
+func _earth_map_entry(body: CharacterBody2D) -> void:
+	get_tree().change_scene_to_file("res://scenes/earthmap.tscn")

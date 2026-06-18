@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://bpppomjjqabyg"]
 
-[ext_resource type="Texture2D" uid="uid://cieqx1uy82jxl" path="res://assets/main menu.png" id="1_5hgee"]
+[ext_resource type="Texture2D" uid="uid://cwrif25nw5iyi" path="res://assets/main menu.png" id="1_5hgee"]
+[ext_resource type="Script" uid="uid://b71tuiilwpjs2" path="res://scripts/main_menu.gd" id="1_xsilq"]
+[ext_resource type="FontFile" uid="uid://bpexselcaaeq1" path="res://assets/SpecialElite-Regular.ttf" id="3_12vek"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hgee"]
-bg_color = Color(0.7058824, 0.47843137, 0.003921569, 1)
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
+bg_color = Color(0.1882353, 0.46666667, 0.47843137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
 border_color = Color(0, 0, 0, 1)
+border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -16,44 +19,90 @@ corner_radius_bottom_left = 5
 shadow_size = 5
 shadow_offset = Vector2(0, 5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsilq"]
+bg_color = Color(0.19215687, 0.46666667, 0.47843137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12vek"]
+bg_color = Color(0.037703555, 0.16863713, 0.18379232, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
 [node name="Control" type="Control" unique_id=411870673]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_xsilq")
 
-[node name="MainMenu" type="Sprite2D" parent="." unique_id=1625368313]
-position = Vector2(575.9999, 324)
-scale = Vector2(0.5999999, 0.59999996)
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=274217907]
+position = Vector2(576.0001, 324)
+scale = Vector2(0.6000001, 0.59999996)
 texture = ExtResource("1_5hgee")
 
-[node name="Buttons" type="HBoxContainer" parent="." unique_id=2058118236]
+[node name="Title" type="Label" parent="." unique_id=1644277733]
 layout_mode = 0
-offset_left = 429.0
-offset_top = 431.0
-offset_right = 961.0
-offset_bottom = 534.0
+offset_left = 174.0
+offset_top = 167.0
+offset_right = 963.0
+offset_bottom = 298.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_12vek")
+theme_override_font_sizes/font_size = 130
+text = "The Caverns"
+
+[node name="Message" type="Label" parent="." unique_id=166039626]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 20.0
+offset_right = 764.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_12vek")
+theme_override_font_sizes/font_size = 30
+text = "CLIMB AT YOUR OWN RISK!"
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=276680034]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 381.0
+offset_right = 985.0
+offset_bottom = 573.0
 theme_override_constants/separation = 50
 
 [node name="Play Button" type="Button" parent="Buttons" unique_id=239040517]
 layout_mode = 2
-theme_override_font_sizes/font_size = 45
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_12vek")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_5hgee")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xsilq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_12vek")
 text = "Play"
-
-[node name="Options Button" type="Button" parent="Buttons" unique_id=1142655445]
-layout_mode = 2
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_5hgee")
-text = "Options"
 
 [node name="Exit Button" type="Button" parent="Buttons" unique_id=1213207450]
 layout_mode = 2
-theme_override_font_sizes/font_size = 45
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_12vek")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_5hgee")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xsilq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_12vek")
 text = "Exit"
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=819287240]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[connection signal="pressed" from="Buttons/Play Button" to="." method="_play"]
+[connection signal="pressed" from="Buttons/Exit Button" to="." method="_quit"]
