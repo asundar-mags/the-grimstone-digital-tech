@@ -90,11 +90,12 @@ visible = false
 limit_left = 0
 limit_top = 50
 limit_right = 1150
-limit_bottom = 687
+limit_bottom = 670
 
 [node name="Floor" type="ColorRect" parent="." unique_id=409169658]
+offset_left = 1.0
 offset_top = 648.0
-offset_right = 1152.0
+offset_right = 1153.0
 offset_bottom = 688.0
 
 [node name="Right Wall B" type="ColorRect" parent="." unique_id=326197311]

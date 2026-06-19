@@ -3,26 +3,75 @@
 [ext_resource type="PackedScene" uid="uid://b73gdcoo5rnga" path="res://scenes/player.tscn" id="1_2468u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6f32"]
-size = Vector2(1152, 78)
+size = Vector2(1193, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwgvk"]
+size = Vector2(40, 649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrj83"]
+size = Vector2(1152, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueurx"]
+size = Vector2(40, 537)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2468u"]
+size = Vector2(20, 72)
 
 [node name="Node2D" type="Node2D" unique_id=1205654782]
 
+[node name="Floor" type="ColorRect" parent="." unique_id=2137355335]
+offset_left = -20.0
+offset_top = 629.0
+offset_right = 1173.0
+offset_bottom = 669.0
+
+[node name="Roof" type="ColorRect" parent="." unique_id=540613145]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1172.0
+offset_bottom = 20.0
+
+[node name="Left Wall" type="ColorRect" parent="." unique_id=1890770039]
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 629.0
+
+[node name="Right Wall" type="ColorRect" parent="." unique_id=475012455]
+offset_left = 1132.0
+offset_right = 1172.0
+offset_bottom = 557.0
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=664479128]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1079018213]
-position = Vector2(575, 648)
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1079018213]
+position = Vector2(576.5, 649)
 shape = SubResource("RectangleShape2D_t6f32")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=703979945]
-offset_top = 609.0
-offset_right = 1152.0
-offset_bottom = 687.0
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D" unique_id=9402310]
+position = Vector2(0, 304.5)
+shape = SubResource("RectangleShape2D_iwgvk")
+
+[node name="Roof" type="CollisionShape2D" parent="StaticBody2D" unique_id=352614184]
+position = Vector2(596, 0)
+shape = SubResource("RectangleShape2D_wrj83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1238635129]
+position = Vector2(1152, 288.5)
+shape = SubResource("RectangleShape2D_ueurx")
 
 [node name="CharacterBody2D" parent="." unique_id=1091708930 instance=ExtResource("1_2468u")]
-position = Vector2(1137, 596)
+position = Vector2(1101, 619)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=737198682]
 limit_left = 0
 limit_top = 0
-limit_right = 1150
-limit_bottom = 687
+limit_right = 1151
+limit_bottom = 649
+
+[node name="Exit" type="Area2D" parent="." unique_id=1097876713]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=504706317]
+position = Vector2(1161, 593)
+shape = SubResource("RectangleShape2D_2468u")
+
+[connection signal="body_entered" from="Exit" to="CharacterBody2D" method="_fire_map_exit"]

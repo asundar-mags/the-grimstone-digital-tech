@@ -39,3 +39,7 @@ func _water_map_entry(body: CharacterBody2D) -> void:
 
 func _earth_map_entry(body: CharacterBody2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/earthmap.tscn")
+
+
+func _fire_map_exit(body: CharacterBody2D) -> void:
+	get_tree().change_scene_to_file("res://scenes/neutral level.tscn")
