@@ -83,7 +83,7 @@ position = Vector2(1144, 366)
 shape = SubResource("RectangleShape2D_g04at")
 
 [node name="CharacterBody2D" parent="." unique_id=1091708930 instance=ExtResource("1_p63fo")]
-position = Vector2(576, 638)
+position = Vector2(569, 391)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=648484472]
 visible = false
