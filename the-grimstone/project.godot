@@ -14,6 +14,10 @@ config/name="The Grimstone"
 run/main_scene="uid://bpppomjjqabyg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+Global="*uid://dwg2alsuka6tf"
+
 [input]
 
 ui_accept={

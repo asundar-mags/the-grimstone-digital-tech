@@ -219,6 +219,9 @@ shape = SubResource("RectangleShape2D_7d51e")
 position = Vector2(907, 305)
 shape = SubResource("RectangleShape2D_3e1px")
 
+[node name="Fire Map Exit" type="Marker2D" parent="." unique_id=284249084]
+position = Vector2(24, 579)
+
 [connection signal="body_entered" from="LB Entry" to="CharacterBody2D" method="_fire_map_entry"]
 [connection signal="body_entered" from="LT Entry" to="CharacterBody2D" method="_earth_map_entry"]
 [connection signal="body_entered" from="RT Entry" to="CharacterBody2D" method="_water_map_entry"]
