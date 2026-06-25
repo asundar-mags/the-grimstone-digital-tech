@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://buws1hgw32p0x"]
 
 [ext_resource type="PackedScene" uid="uid://b73gdcoo5rnga" path="res://scenes/player.tscn" id="1_2468u"]
+[ext_resource type="Texture2D" uid="uid://cydmycyqibrlp" path="res://assets/spikes.png" id="2_iwgvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2468u"]
+size = Vector2(20, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6f32"]
 size = Vector2(1193, 40)
@@ -14,8 +18,23 @@ size = Vector2(1152, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueurx"]
 size = Vector2(40, 537)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2468u"]
-size = Vector2(20, 72)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j88co"]
+size = Vector2(40, 491)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6smt2"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7dki"]
+size = Vector2(63, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5i8p"]
+size = Vector2(64, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpp6j"]
+size = Vector2(73, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x10e"]
+size = Vector2(147, 20)
 
 [node name="Node2D" type="Node2D" unique_id=1205654782]
 
@@ -41,24 +60,6 @@ offset_left = 1132.0
 offset_right = 1172.0
 offset_bottom = 557.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=664479128]
-
-[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1079018213]
-position = Vector2(576.5, 649)
-shape = SubResource("RectangleShape2D_t6f32")
-
-[node name="Left" type="CollisionShape2D" parent="StaticBody2D" unique_id=9402310]
-position = Vector2(0, 304.5)
-shape = SubResource("RectangleShape2D_iwgvk")
-
-[node name="Roof" type="CollisionShape2D" parent="StaticBody2D" unique_id=352614184]
-position = Vector2(596, 0)
-shape = SubResource("RectangleShape2D_wrj83")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1238635129]
-position = Vector2(1152, 288.5)
-shape = SubResource("RectangleShape2D_ueurx")
-
 [node name="CharacterBody2D" parent="." unique_id=1091708930 instance=ExtResource("1_2468u")]
 position = Vector2(1101, 619)
 
@@ -74,4 +75,113 @@ limit_bottom = 649
 position = Vector2(1161, 593)
 shape = SubResource("RectangleShape2D_2468u")
 
+[node name="Pillar" type="ColorRect" parent="." unique_id=1997494652]
+offset_left = 963.0
+offset_top = 138.0
+offset_right = 1003.0
+offset_bottom = 629.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1593863389]
+offset_left = 1003.0
+offset_top = 589.0
+offset_right = 1043.0
+offset_bottom = 629.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=159645885]
+offset_left = 1069.0
+offset_top = 498.0
+offset_right = 1132.0
+offset_bottom = 518.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1086271771]
+offset_left = 1003.0
+offset_top = 384.0
+offset_right = 1067.0
+offset_bottom = 406.0
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=191270663]
+offset_left = 1059.0
+offset_top = 254.0
+offset_right = 1132.0
+offset_bottom = 277.0
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=864913016]
+offset_left = 909.0
+offset_top = 138.0
+offset_right = 1056.0
+offset_bottom = 158.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=664479128]
+
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1079018213]
+position = Vector2(576.5, 649)
+shape = SubResource("RectangleShape2D_t6f32")
+
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D" unique_id=9402310]
+position = Vector2(0, 304.5)
+shape = SubResource("RectangleShape2D_iwgvk")
+
+[node name="Roof" type="CollisionShape2D" parent="StaticBody2D" unique_id=352614184]
+position = Vector2(596, 0)
+shape = SubResource("RectangleShape2D_wrj83")
+
+[node name="Right" type="CollisionShape2D" parent="StaticBody2D" unique_id=1238635129]
+position = Vector2(1152, 288.5)
+shape = SubResource("RectangleShape2D_ueurx")
+
+[node name="Pillar" type="CollisionShape2D" parent="StaticBody2D" unique_id=946891558]
+position = Vector2(983, 383.5)
+shape = SubResource("RectangleShape2D_j88co")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=427814742]
+position = Vector2(1023, 609)
+shape = SubResource("RectangleShape2D_6smt2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=53122524]
+position = Vector2(1100.5, 508)
+shape = SubResource("RectangleShape2D_w7dki")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=590391861]
+position = Vector2(1035, 395)
+shape = SubResource("RectangleShape2D_f5i8p")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1732246398]
+position = Vector2(1095.5, 265.5)
+shape = SubResource("RectangleShape2D_dpp6j")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=149037500]
+position = Vector2(982.5, 148)
+shape = SubResource("RectangleShape2D_2x10e")
+one_way_collision = true
+
+[node name="Spikes" type="Sprite2D" parent="." unique_id=1070053195]
+position = Vector2(663, 619)
+scale = Vector2(0.26, 0.2)
+texture = ExtResource("2_iwgvk")
+
+[node name="Spikes2" type="Sprite2D" parent="." unique_id=711190710]
+position = Vector2(637, 619)
+scale = Vector2(0.26250076, 0.20000032)
+texture = ExtResource("2_iwgvk")
+
+[node name="Spikes3" type="Sprite2D" parent="." unique_id=674734528]
+position = Vector2(611, 619)
+scale = Vector2(0.2600006, 0.19999991)
+texture = ExtResource("2_iwgvk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=694509795]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1382688254]
+polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=601025988]
+polygon = PackedVector2Array(624, 629, 637, 609, 650, 629)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D" unique_id=2065278727]
+polygon = PackedVector2Array(650, 629, 663, 609, 676, 629)
+
 [connection signal="body_entered" from="Exit" to="CharacterBody2D" method="_fire_map_exit"]
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_spike_take_damage"]
