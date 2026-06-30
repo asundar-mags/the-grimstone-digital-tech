@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
+@export var player: CharacterBody2D
+
 const SPEED = 300.0
-const JUMP_VELOCITY = -550.0
+const JUMP_VELOCITY = -500.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,13 +36,11 @@ func _air_map_entry(body: CharacterBody2D) -> void:
 func _water_map_entry(body: CharacterBody2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/watermap.tscn")
 
-
 func _earth_map_entry(body: CharacterBody2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/earthmap.tscn")
 
 func _fire_map_exit(body: CharacterBody2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/neutral level.tscn")
-
 
 func _spike_take_damage(body: CharacterBody2D) -> void:
 	get_tree().call_deferred("reload_current_scene")

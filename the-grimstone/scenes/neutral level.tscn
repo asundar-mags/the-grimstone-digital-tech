@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b73gdcoo5rnga" path="res://scenes/player.tscn" id="1_p63fo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyc7c"]
-size = Vector2(1152, 20)
+size = Vector2(434, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii60h"]
 size = Vector2(85.75, 99)
@@ -23,6 +23,12 @@ size = Vector2(83, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g04at"]
 size = Vector2(86, 172)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_migk1"]
+size = Vector2(383, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drikq"]
+size = Vector2(285, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p63fo"]
 size = Vector2(36, 135)
@@ -45,13 +51,14 @@ size = Vector2(206, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3e1px"]
 size = Vector2(206, 40)
 
-[node name="Node2D" type="Node2D" unique_id=761329231]
+[node name="Node2D" type="Node2D" unique_id=761329231 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_ii60h")
+spawn_points = NodePath("Node2D")
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=8200041]
 
 [node name="Floor" type="CollisionShape2D" parent="Walls" unique_id=1800367071]
-position = Vector2(576, 658)
+position = Vector2(217, 668)
 shape = SubResource("RectangleShape2D_dyc7c")
 
 [node name="Right Wall" type="CollisionShape2D" parent="Walls" unique_id=516525774]
@@ -82,6 +89,14 @@ shape = SubResource("RectangleShape2D_5l7wn")
 position = Vector2(1144, 366)
 shape = SubResource("RectangleShape2D_g04at")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=835835874]
+position = Vector2(910.5, 668)
+shape = SubResource("RectangleShape2D_migk1")
+
+[node name="Trapdoor" type="CollisionShape2D" parent="Walls" unique_id=2030397482]
+position = Vector2(576.5, 668)
+shape = SubResource("RectangleShape2D_drikq")
+
 [node name="CharacterBody2D" parent="." unique_id=1091708930 instance=ExtResource("1_p63fo")]
 position = Vector2(569, 391)
 
@@ -93,9 +108,15 @@ limit_right = 1150
 limit_bottom = 670
 
 [node name="Floor" type="ColorRect" parent="." unique_id=409169658]
-offset_left = 1.0
+offset_left = 51.0
 offset_top = 648.0
-offset_right = 1153.0
+offset_right = 434.0
+offset_bottom = 688.0
+
+[node name="Floor2" type="ColorRect" parent="." unique_id=820877722]
+offset_left = 719.0
+offset_top = 648.0
+offset_right = 1102.0
 offset_bottom = 688.0
 
 [node name="Right Wall B" type="ColorRect" parent="." unique_id=326197311]
@@ -137,30 +158,6 @@ offset_left = 47.0
 offset_right = 1104.0
 offset_bottom = 83.0
 
-[node name="LB Entry" type="Area2D" parent="." unique_id=721316394]
-
-[node name="Fire" type="CollisionShape2D" parent="LB Entry" unique_id=2132253237]
-position = Vector2(-18, 521.5)
-shape = SubResource("RectangleShape2D_p63fo")
-
-[node name="LT Entry" type="Area2D" parent="." unique_id=1184170357]
-
-[node name="Earth" type="CollisionShape2D" parent="LT Entry" unique_id=1595357953]
-position = Vector2(-18, 205)
-shape = SubResource("RectangleShape2D_8xn7f")
-
-[node name="RT Entry" type="Area2D" parent="." unique_id=1531683861]
-
-[node name="Water" type="CollisionShape2D" parent="RT Entry" unique_id=785149440]
-position = Vector2(1164, 203)
-shape = SubResource("RectangleShape2D_8xn7f")
-
-[node name="RB Entry" type="Area2D" parent="." unique_id=1954214189]
-
-[node name="Air" type="CollisionShape2D" parent="RB Entry" unique_id=2050809205]
-position = Vector2(1164, 520)
-shape = SubResource("RectangleShape2D_p63fo")
-
 [node name="Platform" type="ColorRect" parent="." unique_id=1936252251]
 offset_left = 720.0
 offset_top = 530.0
@@ -197,6 +194,36 @@ offset_top = 285.0
 offset_right = 1010.0
 offset_bottom = 325.0
 
+[node name="Trapdoor" type="ColorRect" parent="." unique_id=928206097]
+offset_left = 434.0
+offset_top = 648.0
+offset_right = 719.0
+offset_bottom = 688.0
+
+[node name="LB Entry" type="Area2D" parent="." unique_id=721316394]
+
+[node name="Fire" type="CollisionShape2D" parent="LB Entry" unique_id=2132253237]
+position = Vector2(-18, 521.5)
+shape = SubResource("RectangleShape2D_p63fo")
+
+[node name="LT Entry" type="Area2D" parent="." unique_id=1184170357]
+
+[node name="Earth" type="CollisionShape2D" parent="LT Entry" unique_id=1595357953]
+position = Vector2(-18, 205)
+shape = SubResource("RectangleShape2D_8xn7f")
+
+[node name="RT Entry" type="Area2D" parent="." unique_id=1531683861]
+
+[node name="Water" type="CollisionShape2D" parent="RT Entry" unique_id=785149440]
+position = Vector2(1164, 203)
+shape = SubResource("RectangleShape2D_8xn7f")
+
+[node name="RB Entry" type="Area2D" parent="." unique_id=1954214189]
+
+[node name="Air" type="CollisionShape2D" parent="RB Entry" unique_id=2050809205]
+position = Vector2(1164, 520)
+shape = SubResource("RectangleShape2D_p63fo")
+
 [node name="Platforms" type="StaticBody2D" parent="." unique_id=2127388578]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms" unique_id=869137381]
@@ -219,8 +246,14 @@ shape = SubResource("RectangleShape2D_7d51e")
 position = Vector2(907, 305)
 shape = SubResource("RectangleShape2D_3e1px")
 
-[node name="Fire Map Exit" type="Marker2D" parent="." unique_id=284249084]
-position = Vector2(24, 579)
+[node name="Node2D" type="Node2D" parent="." unique_id=1467994790]
+position = Vector2(569, 391)
+
+[node name="Fire Map Exit" type="Marker2D" parent="Node2D" unique_id=284249084]
+position = Vector2(-545, 188)
+
+[node name="Air Map" type="Marker2D" parent="Node2D" unique_id=379309976]
+position = Vector2(553, 187)
 
 [connection signal="body_entered" from="LB Entry" to="CharacterBody2D" method="_fire_map_entry"]
 [connection signal="body_entered" from="LT Entry" to="CharacterBody2D" method="_earth_map_entry"]

@@ -140,22 +140,18 @@ shape = SubResource("RectangleShape2D_6smt2")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=53122524]
 position = Vector2(1100.5, 508)
 shape = SubResource("RectangleShape2D_w7dki")
-one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=590391861]
 position = Vector2(1035, 395)
 shape = SubResource("RectangleShape2D_f5i8p")
-one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1732246398]
 position = Vector2(1095.5, 265.5)
 shape = SubResource("RectangleShape2D_dpp6j")
-one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=149037500]
 position = Vector2(982.5, 148)
 shape = SubResource("RectangleShape2D_2x10e")
-one_way_collision = true
 
 [node name="Spikes" type="Sprite2D" parent="." unique_id=1070053195]
 position = Vector2(663, 619)
