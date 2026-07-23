@@ -16,7 +16,7 @@ size = Vector2(1057, 83)
 size = Vector2(82, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh2lc"]
-size = Vector2(77, 172)
+size = Vector2(92, 172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l7wn"]
 size = Vector2(83, 126)
@@ -51,7 +51,7 @@ size = Vector2(206, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3e1px"]
 size = Vector2(206, 40)
 
-[node name="Node2D" type="Node2D" unique_id=761329231 node_paths=PackedStringArray("spawn_points")]
+[node name="neutral" type="Node2D" unique_id=761329231 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_ii60h")
 spawn_points = NodePath("Node2D")
 
@@ -78,7 +78,7 @@ position = Vector2(5, 64)
 shape = SubResource("RectangleShape2D_dei5g")
 
 [node name="Left Wall 3" type="CollisionShape2D" parent="Walls" unique_id=808382110]
-position = Vector2(2.5, 368)
+position = Vector2(10, 368)
 shape = SubResource("RectangleShape2D_gh2lc")
 
 [node name="Right Wall 2" type="CollisionShape2D" parent="Walls" unique_id=1533483843]
@@ -134,7 +134,7 @@ offset_bottom = 688.0
 [node name="Left Wall M" type="ColorRect" parent="." unique_id=1618168442]
 offset_left = -36.0
 offset_top = 282.0
-offset_right = 41.0
+offset_right = 56.0
 offset_bottom = 454.0
 
 [node name="Left Wall T" type="ColorRect" parent="." unique_id=2116445419]
@@ -254,6 +254,9 @@ position = Vector2(-545, 188)
 
 [node name="Air Map" type="Marker2D" parent="Node2D" unique_id=379309976]
 position = Vector2(553, 187)
+
+[node name="Earth Map" type="Marker2D" parent="Node2D" unique_id=695921643]
+position = Vector2(-545, -119)
 
 [connection signal="body_entered" from="LB Entry" to="CharacterBody2D" method="_fire_map_entry"]
 [connection signal="body_entered" from="LT Entry" to="CharacterBody2D" method="_earth_map_entry"]
