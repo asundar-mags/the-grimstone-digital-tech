@@ -1,6 +1,9 @@
 extends Node
 
 @export var exits: Array[Node]
+@export var coins_collected: int = 0
+@export var fire_coin: bool = false
+
 var spawn: Vector2
 var change_spawn: bool = false
 

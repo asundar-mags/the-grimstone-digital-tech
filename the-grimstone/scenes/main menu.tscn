@@ -51,15 +51,15 @@ texture = ExtResource("1_5hgee")
 
 [node name="Title" type="Label" parent="." unique_id=1644277733]
 layout_mode = 0
-offset_left = 174.0
-offset_top = 167.0
-offset_right = 963.0
-offset_bottom = 298.0
+offset_left = 166.0
+offset_top = 153.0
+offset_right = 965.0
+offset_bottom = 264.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_12vek")
-theme_override_font_sizes/font_size = 130
-text = "The Caverns"
+theme_override_font_sizes/font_size = 110
+text = "The Grimstone"
 
 [node name="Message" type="Label" parent="." unique_id=166039626]
 layout_mode = 0

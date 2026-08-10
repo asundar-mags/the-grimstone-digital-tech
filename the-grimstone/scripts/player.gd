@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 @export var player: CharacterBody2D
+@export var Respawn: Marker2D
+@export var coin: Area2D
 
 var neutral_level: String = "neutral"
 var initial: int = 0
 var second: int = 1
 var third: int = 2
 var fourth: int = 3
-
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
@@ -30,8 +31,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		
 	move_and_slide()
+	
 func _spike_take_damage(body: CharacterBody2D) -> void:
 	get_tree().call_deferred("reload_current_scene")
 	
@@ -56,3 +58,10 @@ func _fire_map_exit(body: CharacterBody2D) -> void:
 func _earth_map_exit(body: CharacterBody2D) -> void:
 	Global.change_spawn = true
 	get_tree().change_scene_to_file("res://scenes/neutral level.tscn")
+
+func _coin_collected(body: CharacterBody2D) -> void:
+	Global.coins_collected =+ 1
+	Global.fire_coin = true
+	body.global_position = Respawn.global_position
+	coin.queue_free()
+	
