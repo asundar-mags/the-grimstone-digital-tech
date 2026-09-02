@@ -55,6 +55,18 @@ size = Vector2(40, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6aqas"]
 size = Vector2(410.5, 532)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uljru"]
+size = Vector2(20, 497)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21eth"]
+size = Vector2(113, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ifnb"]
+size = Vector2(164, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csi4w"]
+size = Vector2(98, 20)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_iwgvk"]
 radius = 18.248287
 
@@ -118,6 +130,12 @@ offset_top = 589.0
 offset_right = 963.0
 offset_bottom = 629.0
 
+[node name="ColorRect12" type="ColorRect" parent="." unique_id=930568851]
+offset_left = 275.0
+offset_top = 141.0
+offset_right = 373.0
+offset_bottom = 161.0
+
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=159645885]
 offset_left = 1069.0
 offset_top = 498.0
@@ -142,17 +160,65 @@ offset_top = 384.0
 offset_right = 1067.0
 offset_bottom = 406.0
 
+[node name="ColorRect14" type="ColorRect" parent="." unique_id=1696774071]
+offset_left = 201.0
+offset_top = 251.0
+offset_right = 294.0
+offset_bottom = 271.0
+
+[node name="ColorRect20" type="ColorRect" parent="." unique_id=891408056]
+offset_left = 201.0
+offset_top = 486.0
+offset_right = 314.0
+offset_bottom = 506.0
+
 [node name="ColorRect10" type="ColorRect" parent="." unique_id=1886537382]
 offset_left = 825.0
 offset_top = 499.0
 offset_right = 897.0
 offset_bottom = 522.0
 
+[node name="ColorRect13" type="ColorRect" parent="." unique_id=82207532]
+offset_left = 181.0
+offset_top = 132.0
+offset_right = 201.0
+offset_bottom = 629.0
+
+[node name="ColorRect16" type="ColorRect" parent="." unique_id=1600322229]
+offset_left = 69.0
+offset_top = 289.0
+offset_right = 181.0
+offset_bottom = 309.0
+
+[node name="ColorRect17" type="ColorRect" parent="." unique_id=1498904228]
+offset_left = 88.0
+offset_top = 532.0
+offset_right = 181.0
+offset_bottom = 552.0
+
 [node name="ColorRect4" type="ColorRect" parent="." unique_id=191270663]
 offset_left = 1059.0
 offset_top = 254.0
 offset_right = 1132.0
 offset_bottom = 277.0
+
+[node name="ColorRect18" type="ColorRect" parent="." unique_id=138892574]
+offset_left = 20.0
+offset_top = 413.0
+offset_right = 132.0
+offset_bottom = 433.0
+
+[node name="ColorRect15" type="ColorRect" parent="." unique_id=1659267802]
+offset_left = 20.0
+offset_top = 165.0
+offset_right = 132.0
+offset_bottom = 185.0
+
+[node name="ColorRect19" type="ColorRect" parent="." unique_id=809785165]
+offset_left = 260.0
+offset_top = 367.0
+offset_right = 373.0
+offset_bottom = 387.0
 
 [node name="ColorRect5" type="ColorRect" parent="." unique_id=864913016]
 offset_left = 909.0
@@ -171,6 +237,12 @@ offset_left = 373.0
 offset_top = 20.0
 offset_right = 783.0
 offset_bottom = 552.0
+
+[node name="ColorRect21" type="ColorRect" parent="." unique_id=350963069]
+offset_left = 201.0
+offset_top = 599.0
+offset_right = 365.0
+offset_bottom = 629.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=664479128]
 
@@ -238,6 +310,46 @@ shape = SubResource("RectangleShape2D_aquvw")
 position = Vector2(577.75, 286)
 shape = SubResource("RectangleShape2D_6aqas")
 
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=895927454]
+position = Vector2(191, 380.5)
+shape = SubResource("RectangleShape2D_uljru")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=1050860821]
+position = Vector2(317, 377)
+shape = SubResource("RectangleShape2D_21eth")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=1253747096]
+position = Vector2(237.5, 261)
+shape = SubResource("RectangleShape2D_21eth")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=1630380665]
+position = Vector2(125, 299)
+shape = SubResource("RectangleShape2D_21eth")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D" unique_id=969165989]
+position = Vector2(144, 542)
+shape = SubResource("RectangleShape2D_21eth")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D" unique_id=698342931]
+position = Vector2(76, 423)
+shape = SubResource("RectangleShape2D_21eth")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D" unique_id=2073075805]
+position = Vector2(76, 175)
+shape = SubResource("RectangleShape2D_21eth")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D" unique_id=146462495]
+position = Vector2(258, 496)
+shape = SubResource("RectangleShape2D_21eth")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D" unique_id=1127443608]
+position = Vector2(283, 614)
+shape = SubResource("RectangleShape2D_2ifnb")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D" unique_id=119636264]
+position = Vector2(324, 151)
+shape = SubResource("RectangleShape2D_csi4w")
+
 [node name="Spikes" type="Sprite2D" parent="." unique_id=1070053195]
 position = Vector2(663, 619)
 scale = Vector2(0.26, 0.2)
@@ -295,10 +407,11 @@ polygon = PackedVector2Array(650, 629, 663, 609, 676, 629)
 script = ExtResource("3_wrj83")
 
 [node name="Polygon2D" type="Polygon2D" parent="Coin" unique_id=850813526]
+position = Vector2(50, 1)
 polygon = PackedVector2Array(89, 579, 82, 580, 76, 584, 72, 590, 71, 596, 72, 603, 75, 609, 82, 614, 90, 615, 98, 613, 103, 608, 107, 601, 107, 593, 103, 585, 97, 580)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin" unique_id=914995967]
-position = Vector2(89, 597)
+position = Vector2(139, 598)
 shape = SubResource("CircleShape2D_iwgvk")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1001851961]

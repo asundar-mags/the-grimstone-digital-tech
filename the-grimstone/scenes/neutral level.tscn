@@ -31,10 +31,10 @@ size = Vector2(383, 40)
 size = Vector2(285, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p63fo"]
-size = Vector2(36, 135)
+size = Vector2(35.375, 135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xn7f"]
-size = Vector2(36, 154)
+size = Vector2(35.375, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dd66"]
 size = Vector2(206, 40)
@@ -203,25 +203,25 @@ offset_bottom = 688.0
 [node name="LB Entry" type="Area2D" parent="." unique_id=721316394]
 
 [node name="Fire" type="CollisionShape2D" parent="LB Entry" unique_id=2132253237]
-position = Vector2(-18, 521.5)
+position = Vector2(-16.6875, 521.5)
 shape = SubResource("RectangleShape2D_p63fo")
 
 [node name="LT Entry" type="Area2D" parent="." unique_id=1184170357]
 
 [node name="Earth" type="CollisionShape2D" parent="LT Entry" unique_id=1595357953]
-position = Vector2(-18, 205)
+position = Vector2(-16.6875, 205)
 shape = SubResource("RectangleShape2D_8xn7f")
 
 [node name="RT Entry" type="Area2D" parent="." unique_id=1531683861]
 
 [node name="Water" type="CollisionShape2D" parent="RT Entry" unique_id=785149440]
-position = Vector2(1164, 203)
+position = Vector2(1165.625, 203)
 shape = SubResource("RectangleShape2D_8xn7f")
 
 [node name="RB Entry" type="Area2D" parent="." unique_id=1954214189]
 
 [node name="Air" type="CollisionShape2D" parent="RB Entry" unique_id=2050809205]
-position = Vector2(1164, 520)
+position = Vector2(1165.625, 520)
 shape = SubResource("RectangleShape2D_p63fo")
 
 [node name="Platforms" type="StaticBody2D" parent="." unique_id=2127388578]
