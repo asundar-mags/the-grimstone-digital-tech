@@ -12,6 +12,7 @@ var fourth: int = 3
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
+const SLIDE_FRICTION = 0.15
 
 func _ready() -> void:
 	if Global.change_spawn and get_parent().name == neutral_level:
@@ -27,10 +28,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if direction != 0:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = lerp(velocity.x, 0.0, SLIDE_FRICTION)
+		
+		if abs(velocity.x) < 1.0:
+			velocity.x = 0
 		
 	move_and_slide()
 	
