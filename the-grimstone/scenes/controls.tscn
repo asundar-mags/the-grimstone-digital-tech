@@ -4,6 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://b45kkioby075t" path="res://assets/options and gameover menu.png" id="2_ihl6s"]
 [ext_resource type="FontFile" uid="uid://bpexselcaaeq1" path="res://assets/SpecialElite-Regular.ttf" id="3_jlst0"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_cywyo"]
+font = ExtResource("3_jlst0")
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se8ut"]
 bg_color = Color(0.1882353, 0.46666667, 0.47843137, 1)
 border_width_left = 10
@@ -84,13 +90,14 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_jlst0")
 theme_override_font_sizes/font_size = 35
 text = "WASD or Arrows - Movement
-Space - Jump (Some may have double jump)
+Space - Jump (Some levels may have double jump)
 Escape - Back to Main Menu/ Pause
 
 Note: Pressing escape may not save your
 progress but it may save, so use as a pause 
 menu at your own risk.
 "
+label_settings = SubResource("LabelSettings_cywyo")
 
 [node name="Exit" type="Button" parent="." unique_id=173249848]
 layout_mode = 0
