@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b73gdcoo5rnga" path="res://scenes/player.tscn" id="1_b36sl"]
 [ext_resource type="Texture2D" uid="uid://cydmycyqibrlp" path="res://assets/spikes.png" id="2_5c3lg"]
+[ext_resource type="Script" uid="uid://qhph7cm1l2u2" path="res://scripts/water_coin.gd" id="3_cko1q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6f32"]
 size = Vector2(1192, 78)
@@ -185,7 +186,7 @@ shape = SubResource("RectangleShape2D_ebqmd")
 [node name="Player" parent="." unique_id=1091708930 node_paths=PackedStringArray("Respawn", "coin") instance=ExtResource("1_b36sl")]
 position = Vector2(76, 594)
 Respawn = NodePath("../Spawn")
-coin = NodePath("../Coin")
+coin = NodePath("../water coin")
 max_jumps = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=737198682]
@@ -492,19 +493,20 @@ polygon = PackedVector2Array(342, 140, 363, 101, 384, 140)
 position = Vector2(109.600006, 468.7)
 polygon = PackedVector2Array(342, 140, 363, 101, 384, 140)
 
-[node name="Coin" type="Area2D" parent="." unique_id=804281361]
+[node name="water coin" type="Area2D" parent="." unique_id=804281361]
+script = ExtResource("3_cko1q")
 
-[node name="Hitbox" type="CollisionShape2D" parent="Coin" unique_id=1078025349]
+[node name="Hitbox" type="CollisionShape2D" parent="water coin" unique_id=1078025349]
 position = Vector2(293, 555)
 shape = SubResource("CircleShape2D_5c3lg")
 
-[node name="Body" type="Polygon2D" parent="Coin" unique_id=643956320]
+[node name="Body" type="Polygon2D" parent="water coin" unique_id=643956320]
 position = Vector2(268.40015, 529.8157)
 scale = Vector2(0.77419347, 0.77419335)
 texture = SubResource("GradientTexture2D_47ork")
 polygon = PackedVector2Array(31.77483, 1.5297203, 39.77483, 2.5297203, 47.77483, 5.5297203, 53.77483, 10.52972, 58.77483, 17.52972, 61.77483, 25.52972, 62.77483, 33.52972, 61.77483, 41.52972, 58.77483, 48.52972, 53.77483, 54.52972, 47.77483, 59.52972, 39.77483, 62.52972, 31.77483, 63.52972, 22.77483, 62.52972, 15.77483, 59.52972, 9.77483, 54.52972, 4.77483, 48.52972, 1.7748299, 40.52972, 0.77482986, 32.52972, 1.7748299, 23.52972, 4.77483, 16.52972, 9.77483, 10.52972, 15.77483, 5.5297203, 22.77483, 2.5297203)
 
-[node name="Border" type="Line2D" parent="Coin" unique_id=1288087785]
+[node name="Border" type="Line2D" parent="water coin" unique_id=1288087785]
 position = Vector2(64.09375, 121.406)
 scale = Vector2(0.78125, 0.7812504)
 points = PackedVector2Array(293, 524, 301, 525, 309, 528, 315, 533, 320, 539, 323, 548, 324, 556, 323, 564, 320, 571, 315, 577, 309, 582, 302, 585, 292, 586, 284, 585, 277, 582, 271, 577, 266, 572, 263, 564, 262, 555, 263, 546, 267, 538, 271, 533, 277, 528, 284, 525, 293, 524)
@@ -513,4 +515,4 @@ default_color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="Exit" to="Player" method="_water_map_exit"]
 [connection signal="body_entered" from="Spikes hitbox" to="Player" method="_spike_take_damage"]
-[connection signal="body_entered" from="Coin" to="Player" method="_water_coin_collected"]
+[connection signal="body_entered" from="water coin" to="Player" method="_water_coin_collected"]

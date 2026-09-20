@@ -325,7 +325,7 @@ position = Vector2(-545, -119)
 position = Vector2(556, -119)
 
 [node name="Timer" type="Timer" parent="." unique_id=400798451]
-wait_time = 3.0
+wait_time = 1.5
 one_shot = true
 
 [node name="End game label" type="Label" parent="." unique_id=2029877745]
