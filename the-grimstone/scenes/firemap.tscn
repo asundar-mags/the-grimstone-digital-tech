@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://b73gdcoo5rnga" path="res://scenes/player.tscn" id="1_2468u"]
 [ext_resource type="Texture2D" uid="uid://cydmycyqibrlp" path="res://assets/spikes.png" id="2_iwgvk"]
-[ext_resource type="Script" uid="uid://wmn2uxc3rb4e" path="res://scripts/coin.gd" id="3_wrj83"]
+[ext_resource type="Script" uid="uid://wmn2uxc3rb4e" path="res://scripts/fire_coin.gd" id="3_wrj83"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2468u"]
-size = Vector2(20, 72)
+size = Vector2(22, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6f32"]
 size = Vector2(1193, 40)
@@ -68,7 +68,8 @@ size = Vector2(164, 30)
 size = Vector2(98, 20)
 
 [sub_resource type="Gradient" id="Gradient_wrj83"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+offsets = PackedFloat32Array(0, 0.42207792, 0.83116883)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.44666666, 0, 1, 1, 1, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ueurx"]
 gradient = SubResource("Gradient_wrj83")
@@ -79,9 +80,9 @@ repeat = 1
 [sub_resource type="CircleShape2D" id="CircleShape2D_iwgvk"]
 radius = 18.248287
 
-[node name="Node2D" type="Node2D" unique_id=1205654782]
+[node name="fire map" type="Node2D" unique_id=1205654782]
 
-[node name="ColorRect22" type="ColorRect" parent="." unique_id=444095848]
+[node name="Background" type="ColorRect" parent="." unique_id=444095848]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.64398086, 0.64398086, 0.6439808, 1)
@@ -112,12 +113,12 @@ offset_right = 1172.0
 offset_bottom = 557.0
 color = Color(0.54650605, 0.11732852, 0, 1)
 
-[node name="CharacterBody2D" parent="." unique_id=1091708930 node_paths=PackedStringArray("Respawn", "coin") instance=ExtResource("1_2468u")]
-position = Vector2(1101, 614)
+[node name="Player" parent="." unique_id=1091708930 node_paths=PackedStringArray("Respawn", "coin") instance=ExtResource("1_2468u")]
+position = Vector2(1088, 614)
 Respawn = NodePath("../Spawn")
-coin = NodePath("../Coin")
+coin = NodePath("../Fire coin")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=737198682]
+[node name="Camera" type="Camera2D" parent="Player" unique_id=737198682]
 limit_left = 0
 limit_top = 0
 limit_right = 1152
@@ -127,7 +128,7 @@ limit_smoothed = true
 [node name="Exit" type="Area2D" parent="." unique_id=1097876713]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=504706317]
-position = Vector2(1161, 593)
+position = Vector2(1160, 593)
 shape = SubResource("RectangleShape2D_2468u")
 
 [node name="Pillar" type="ColorRect" parent="." unique_id=1997494652]
@@ -137,147 +138,147 @@ offset_right = 1003.0
 offset_bottom = 629.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1593863389]
+[node name="Platform #1" type="ColorRect" parent="." unique_id=1593863389]
 offset_left = 1003.0
 offset_top = 589.0
 offset_right = 1043.0
 offset_bottom = 629.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect8" type="ColorRect" parent="." unique_id=388979524]
+[node name="Platform #2" type="ColorRect" parent="." unique_id=388979524]
 offset_left = 923.0
 offset_top = 589.0
 offset_right = 963.0
 offset_bottom = 629.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect12" type="ColorRect" parent="." unique_id=930568851]
+[node name="Platform #3" type="ColorRect" parent="." unique_id=930568851]
 offset_left = 275.0
 offset_top = 141.0
 offset_right = 373.0
 offset_bottom = 161.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=159645885]
+[node name="Platform #4" type="ColorRect" parent="." unique_id=159645885]
 offset_left = 1069.0
 offset_top = 498.0
 offset_right = 1132.0
 offset_bottom = 518.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect9" type="ColorRect" parent="." unique_id=1190334349]
+[node name="Platform #5" type="ColorRect" parent="." unique_id=1190334349]
 offset_left = 890.0
 offset_top = 391.0
 offset_right = 963.0
 offset_bottom = 415.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect7" type="ColorRect" parent="." unique_id=1447809942]
+[node name="Platform #6" type="ColorRect" parent="." unique_id=1447809942]
 offset_left = 825.0
 offset_top = 254.0
 offset_right = 898.0
 offset_bottom = 277.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="." unique_id=1086271771]
+[node name="Platform #7" type="ColorRect" parent="." unique_id=1086271771]
 offset_left = 1003.0
 offset_top = 384.0
 offset_right = 1067.0
 offset_bottom = 406.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect14" type="ColorRect" parent="." unique_id=1696774071]
+[node name="Platform #8" type="ColorRect" parent="." unique_id=1696774071]
 offset_left = 201.0
 offset_top = 251.0
 offset_right = 294.0
 offset_bottom = 271.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect20" type="ColorRect" parent="." unique_id=891408056]
+[node name="Platform #9" type="ColorRect" parent="." unique_id=891408056]
 offset_left = 201.0
 offset_top = 486.0
 offset_right = 314.0
 offset_bottom = 506.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect10" type="ColorRect" parent="." unique_id=1886537382]
+[node name="Platform #10" type="ColorRect" parent="." unique_id=1886537382]
 offset_left = 825.0
 offset_top = 518.0
 offset_right = 897.0
 offset_bottom = 541.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect13" type="ColorRect" parent="." unique_id=82207532]
+[node name="Platform #11" type="ColorRect" parent="." unique_id=82207532]
 offset_left = 181.0
 offset_top = 132.0
 offset_right = 201.0
 offset_bottom = 629.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect16" type="ColorRect" parent="." unique_id=1600322229]
+[node name="Platform #12" type="ColorRect" parent="." unique_id=1600322229]
 offset_left = 69.0
 offset_top = 289.0
 offset_right = 181.0
 offset_bottom = 309.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect17" type="ColorRect" parent="." unique_id=1498904228]
+[node name="Platform #13" type="ColorRect" parent="." unique_id=1498904228]
 offset_left = 88.0
 offset_top = 532.0
 offset_right = 181.0
 offset_bottom = 552.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="." unique_id=191270663]
+[node name="Platform #14" type="ColorRect" parent="." unique_id=191270663]
 offset_left = 1059.0
 offset_top = 254.0
 offset_right = 1132.0
 offset_bottom = 277.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect18" type="ColorRect" parent="." unique_id=138892574]
+[node name="Platform #15" type="ColorRect" parent="." unique_id=138892574]
 offset_left = 20.0
 offset_top = 413.0
 offset_right = 132.0
 offset_bottom = 433.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect15" type="ColorRect" parent="." unique_id=1659267802]
+[node name="Platform #16" type="ColorRect" parent="." unique_id=1659267802]
 offset_left = 20.0
 offset_top = 165.0
 offset_right = 132.0
 offset_bottom = 185.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect19" type="ColorRect" parent="." unique_id=809785165]
+[node name="Platform #17" type="ColorRect" parent="." unique_id=809785165]
 offset_left = 260.0
 offset_top = 367.0
 offset_right = 373.0
 offset_bottom = 387.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect5" type="ColorRect" parent="." unique_id=864913016]
+[node name="Platform #18" type="ColorRect" parent="." unique_id=864913016]
 offset_left = 909.0
 offset_top = 138.0
 offset_right = 1056.0
 offset_bottom = 158.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect6" type="ColorRect" parent="." unique_id=1348103954]
+[node name="Platform #19" type="ColorRect" parent="." unique_id=1348103954]
 offset_left = 783.0
 offset_top = 20.0
 offset_right = 825.0
 offset_bottom = 541.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect11" type="ColorRect" parent="." unique_id=484222950]
+[node name="Platform #20" type="ColorRect" parent="." unique_id=484222950]
 offset_left = 373.0
 offset_top = 20.0
 offset_right = 783.0
 offset_bottom = 541.0
 color = Color(0.54509807, 0.11764706, 0, 1)
 
-[node name="ColorRect21" type="ColorRect" parent="." unique_id=350963069]
+[node name="Platform #21" type="ColorRect" parent="." unique_id=350963069]
 offset_left = 201.0
 offset_top = 599.0
 offset_right = 365.0
@@ -306,165 +307,165 @@ shape = SubResource("RectangleShape2D_ueurx")
 position = Vector2(983, 383.5)
 shape = SubResource("RectangleShape2D_j88co")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=427814742]
+[node name="Platform #1" type="CollisionShape2D" parent="StaticBody2D" unique_id=427814742]
 position = Vector2(1023, 609)
 shape = SubResource("RectangleShape2D_6smt2")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=53122524]
+[node name="Platform #2" type="CollisionShape2D" parent="StaticBody2D" unique_id=53122524]
 position = Vector2(1100.5, 508)
 shape = SubResource("RectangleShape2D_w7dki")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=590391861]
+[node name="Platform #3" type="CollisionShape2D" parent="StaticBody2D" unique_id=590391861]
 position = Vector2(1035, 395)
 shape = SubResource("RectangleShape2D_f5i8p")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1732246398]
+[node name="Platform #4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1732246398]
 position = Vector2(1095.5, 265.5)
 shape = SubResource("RectangleShape2D_dpp6j")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=149037500]
+[node name="Platform #5" type="CollisionShape2D" parent="StaticBody2D" unique_id=149037500]
 position = Vector2(982.5, 148)
 shape = SubResource("RectangleShape2D_2x10e")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1873869301]
+[node name="Platform #6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1873869301]
 position = Vector2(804, 280.5)
 shape = SubResource("RectangleShape2D_555bd")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=186799602]
+[node name="Platform #7" type="CollisionShape2D" parent="StaticBody2D" unique_id=186799602]
 position = Vector2(861.5, 265.25)
 shape = SubResource("RectangleShape2D_nbel3")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1914942241]
+[node name="Platform #8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1914942241]
 position = Vector2(926.25, 403)
 shape = SubResource("RectangleShape2D_bmkop")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=823091654]
+[node name="Platform #9" type="CollisionShape2D" parent="StaticBody2D" unique_id=823091654]
 position = Vector2(861, 529.5)
 shape = SubResource("RectangleShape2D_xrhu7")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=1330236869]
+[node name="Platform #10" type="CollisionShape2D" parent="StaticBody2D" unique_id=1330236869]
 position = Vector2(943, 609)
 shape = SubResource("RectangleShape2D_aquvw")
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=461030351]
+[node name="Platform #11" type="CollisionShape2D" parent="StaticBody2D" unique_id=461030351]
 position = Vector2(577.75, 280.5)
 shape = SubResource("RectangleShape2D_6aqas")
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=895927454]
+[node name="Platform #12" type="CollisionShape2D" parent="StaticBody2D" unique_id=895927454]
 position = Vector2(191, 380.5)
 shape = SubResource("RectangleShape2D_uljru")
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=1050860821]
+[node name="Platform #13" type="CollisionShape2D" parent="StaticBody2D" unique_id=1050860821]
 position = Vector2(317, 377)
 shape = SubResource("RectangleShape2D_21eth")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=1253747096]
+[node name="Platform #14" type="CollisionShape2D" parent="StaticBody2D" unique_id=1253747096]
 position = Vector2(237.5, 261)
 shape = SubResource("RectangleShape2D_21eth")
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=1630380665]
+[node name="Platform #15" type="CollisionShape2D" parent="StaticBody2D" unique_id=1630380665]
 position = Vector2(125, 299)
 shape = SubResource("RectangleShape2D_21eth")
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D" unique_id=969165989]
+[node name="Platform #16" type="CollisionShape2D" parent="StaticBody2D" unique_id=969165989]
 position = Vector2(144, 542)
 shape = SubResource("RectangleShape2D_21eth")
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D" unique_id=698342931]
+[node name="Platform #17" type="CollisionShape2D" parent="StaticBody2D" unique_id=698342931]
 position = Vector2(76, 423)
 shape = SubResource("RectangleShape2D_21eth")
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D" unique_id=2073075805]
+[node name="Platform #18" type="CollisionShape2D" parent="StaticBody2D" unique_id=2073075805]
 position = Vector2(76, 175)
 shape = SubResource("RectangleShape2D_21eth")
 
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D" unique_id=146462495]
+[node name="Platform #19" type="CollisionShape2D" parent="StaticBody2D" unique_id=146462495]
 position = Vector2(258, 496)
 shape = SubResource("RectangleShape2D_21eth")
 
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D" unique_id=1127443608]
+[node name="Platform #20" type="CollisionShape2D" parent="StaticBody2D" unique_id=1127443608]
 position = Vector2(283, 614)
 shape = SubResource("RectangleShape2D_2ifnb")
 
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D" unique_id=119636264]
+[node name="Platform #21" type="CollisionShape2D" parent="StaticBody2D" unique_id=119636264]
 position = Vector2(324, 151)
 shape = SubResource("RectangleShape2D_csi4w")
 
-[node name="Spikes" type="Sprite2D" parent="." unique_id=1070053195]
+[node name="Spike #1" type="Sprite2D" parent="." unique_id=1070053195]
 position = Vector2(663, 619)
 scale = Vector2(0.26, 0.2)
 texture = ExtResource("2_iwgvk")
 
-[node name="Spikes2" type="Sprite2D" parent="." unique_id=711190710]
+[node name="Spike #2" type="Sprite2D" parent="." unique_id=711190710]
 position = Vector2(637, 619)
 scale = Vector2(0.26250076, 0.20000032)
 texture = ExtResource("2_iwgvk")
 
-[node name="Spikes3" type="Sprite2D" parent="." unique_id=674734528]
+[node name="Spike #3" type="Sprite2D" parent="." unique_id=674734528]
 position = Vector2(611, 619)
 scale = Vector2(0.2600006, 0.19999991)
 texture = ExtResource("2_iwgvk")
 
-[node name="Spikes4" type="Sprite2D" parent="." unique_id=875196418]
+[node name="Spike #4" type="Sprite2D" parent="." unique_id=875196418]
 position = Vector2(438, 619.00006)
 scale = Vector2(0.2600006, 0.19999991)
 texture = ExtResource("2_iwgvk")
 
-[node name="Spikes5" type="Sprite2D" parent="." unique_id=1473385279]
+[node name="Spike #5" type="Sprite2D" parent="." unique_id=1473385279]
 position = Vector2(412, 619)
 scale = Vector2(0.2600006, 0.19999991)
 texture = ExtResource("2_iwgvk")
 
-[node name="Spikes6" type="Sprite2D" parent="." unique_id=851957522]
+[node name="Spike #6" type="Sprite2D" parent="." unique_id=851957522]
 position = Vector2(386, 619)
 scale = Vector2(0.2600006, 0.19999991)
 texture = ExtResource("2_iwgvk")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=694509795]
+[node name="Spikes" type="Area2D" parent="." unique_id=694509795]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1382688254]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes" unique_id=1382688254]
 polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
 
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Area2D" unique_id=1965861701]
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Spikes" unique_id=1965861701]
 position = Vector2(-173, 0)
 polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Area2D" unique_id=712789031]
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Spikes" unique_id=712789031]
 position = Vector2(-225, 0)
 polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
 
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Area2D" unique_id=1458794504]
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Spikes" unique_id=1458794504]
 position = Vector2(-199, 0)
 polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=601025988]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Spikes" unique_id=601025988]
 polygon = PackedVector2Array(624, 629, 637, 609, 650, 629)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D" unique_id=2065278727]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Spikes" unique_id=2065278727]
 polygon = PackedVector2Array(650, 629, 663, 609, 676, 629)
 
-[node name="Coin" type="Area2D" parent="." unique_id=554036653]
+[node name="Fire coin" type="Area2D" parent="." unique_id=554036653]
 script = ExtResource("3_wrj83")
 
-[node name="Polygon2D" type="Polygon2D" parent="Coin" unique_id=850813526]
+[node name="Body" type="Polygon2D" parent="Fire coin" unique_id=850813526]
 position = Vector2(50, 1)
 texture = SubResource("GradientTexture2D_ueurx")
 texture_scale = Vector2(1.5, 1.5)
 polygon = PackedVector2Array(89, 579, 82, 580, 76, 584, 72, 590, 71, 596, 72, 603, 75, 609, 82, 614, 90, 615, 98, 613, 103, 608, 107, 601, 107, 593, 103, 585, 97, 580)
 uv = PackedVector2Array(20.935038, 0.8124733, 12.965786, 1.9509373, 6.135, 6.504794, 1.5811424, 13.33558, 0.44267845, 20.166367, 1.5811424, 28.135616, 4.9965353, 34.9664, 12.965786, 40.658722, 22.073502, 41.797188, 31.181217, 39.520264, 36.873535, 33.827934, 41.42739, 25.858688, 41.42739, 16.750973, 36.873535, 7.643258, 30.042751, 1.9509373)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin" unique_id=914995967]
+[node name="Hitbox" type="CollisionShape2D" parent="Fire coin" unique_id=914995967]
 position = Vector2(139, 598)
 shape = SubResource("CircleShape2D_iwgvk")
 
-[node name="Line2D" type="Line2D" parent="Coin" unique_id=977425286]
+[node name="Border" type="Line2D" parent="Fire coin" unique_id=977425286]
 points = PackedVector2Array(139, 580, 147, 581, 153, 586, 157, 594, 157, 602, 153, 609, 148, 614, 140, 616, 132, 615, 125, 610, 122, 604, 121, 597, 122, 591, 126, 585, 132, 581, 139, 580)
 width = 2.0
 default_color = Color(0.91881675, 0.91881675, 0.9188166, 1)
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=1001851961]
-position = Vector2(1101, 614)
+position = Vector2(1088, 614)
 
-[connection signal="body_entered" from="Exit" to="CharacterBody2D" method="_fire_map_exit"]
-[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_spike_take_damage"]
-[connection signal="body_entered" from="Coin" to="CharacterBody2D" method="_coin_collected"]
+[connection signal="body_entered" from="Exit" to="Player" method="_fire_map_exit"]
+[connection signal="body_entered" from="Spikes" to="Player" method="_spike_take_damage"]
+[connection signal="body_entered" from="Fire coin" to="Player" method="_fire_coin_collected"]

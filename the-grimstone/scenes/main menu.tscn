@@ -36,6 +36,50 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0, 0, 0, 1)
 border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsw8r"]
+bg_color = Color(0.1882353, 0.46666667, 0.47843137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km7eu"]
+bg_color = Color(0.1882353, 0.46666667, 0.47843137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a6dn"]
+bg_color = Color(0.039215688, 0.16862746, 0.18431373, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Control" type="Control" unique_id=411870673]
 layout_mode = 3
@@ -74,12 +118,12 @@ theme_override_fonts/font = ExtResource("3_12vek")
 theme_override_font_sizes/font_size = 30
 text = "CLIMB AT YOUR OWN RISK!"
 
-[node name="Buttons" type="VBoxContainer" parent="." unique_id=276680034]
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=1427231075]
 layout_mode = 0
-offset_left = 711.0
-offset_top = 381.0
-offset_right = 985.0
-offset_bottom = 573.0
+offset_left = 502.0
+offset_top = 515.0
+offset_right = 1119.0
+offset_bottom = 620.0
 theme_override_constants/separation = 50
 
 [node name="Play Button" type="Button" parent="Buttons" unique_id=239040517]
@@ -93,6 +137,17 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xsilq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_12vek")
 text = "Play"
 
+[node name="Controls button" type="Button" parent="Buttons" unique_id=652734368]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_12vek")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_vsw8r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_km7eu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5a6dn")
+text = "Controls"
+
 [node name="Exit Button" type="Button" parent="Buttons" unique_id=1213207450]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -105,4 +160,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_12vek")
 text = "Exit"
 
 [connection signal="pressed" from="Buttons/Play Button" to="." method="_play"]
+[connection signal="pressed" from="Buttons/Controls button" to="." method="_options"]
 [connection signal="pressed" from="Buttons/Exit Button" to="." method="_quit"]

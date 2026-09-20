@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://c66n1cprybvrv"]
+
+[ext_resource type="Script" uid="uid://cgeuno7vqgww" path="res://scripts/controls.gd" id="1_cywyo"]
+[ext_resource type="Texture2D" uid="uid://b45kkioby075t" path="res://assets/options and gameover menu.png" id="2_ihl6s"]
+[ext_resource type="FontFile" uid="uid://bpexselcaaeq1" path="res://assets/SpecialElite-Regular.ttf" id="3_jlst0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se8ut"]
+bg_color = Color(0.1882353, 0.46666667, 0.47843137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ao2gm"]
+bg_color = Color(0.1882353, 0.46666667, 0.47843137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07a1d"]
+bg_color = Color(0.039215688, 0.16862746, 0.18431373, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[node name="Control" type="Control" unique_id=1705088176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cywyo")
+
+[node name="OptionsMenu" type="Sprite2D" parent="." unique_id=1887861609]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ihl6s")
+
+[node name="Title" type="Label" parent="." unique_id=1675668957]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 80.0
+offset_right = 782.0
+offset_bottom = 181.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_jlst0")
+theme_override_font_sizes/font_size = 100
+text = "Controls"
+
+[node name="Info" type="Label" parent="." unique_id=205837320]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 201.0
+offset_right = 949.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_jlst0")
+theme_override_font_sizes/font_size = 35
+text = "WASD or Arrows - Movement
+Space - Jump (Some may have double jump)
+Escape - Back to Main Menu/ Pause
+
+Note: Pressing escape may not save your
+progress but it may save, so use as a pause 
+menu at your own risk.
+"
+
+[node name="Exit" type="Button" parent="." unique_id=173249848]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 512.0
+offset_right = 694.0
+offset_bottom = 566.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_jlst0")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_se8ut")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ao2gm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07a1d")
+text = "Back to Title Screen"
+
+[connection signal="pressed" from="Exit" to="." method="_exit_back_to_title_screen"]

@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bgc88di85sspb"]
+
+[ext_resource type="Texture2D" uid="uid://b45kkioby075t" path="res://assets/options and gameover menu.png" id="1_iwahs"]
+[ext_resource type="Script" uid="uid://b713nq2djicxm" path="res://scripts/game_over.gd" id="1_jw6e5"]
+[ext_resource type="FontFile" uid="uid://bpexselcaaeq1" path="res://assets/SpecialElite-Regular.ttf" id="2_61w2s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jw6e5"]
+font = ExtResource("2_61w2s")
+font_size = 150
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wa2qn"]
+font = ExtResource("2_61w2s")
+font_size = 25
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa2qn"]
+bg_color = Color(0.1882353, 0.46666667, 0.47843137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyfkl"]
+bg_color = Color(0.1882353, 0.46666667, 0.47843137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx0b3"]
+bg_color = Color(0.039215688, 0.16862746, 0.18431373, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[node name="game over" type="Control" unique_id=994256503]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jw6e5")
+
+[node name="background" type="Sprite2D" parent="." unique_id=447738045]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_iwahs")
+
+[node name="title" type="Label" parent="." unique_id=208539095]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 179.0
+offset_right = 941.0
+offset_bottom = 330.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_jw6e5")
+
+[node name="Label" type="Label" parent="." unique_id=2091206741]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 326.0
+offset_right = 922.0
+offset_bottom = 401.0
+text = "Congrats on traversing the caverns of the Grimstone... 
+Quit the game if you would like to restart..."
+label_settings = SubResource("LabelSettings_wa2qn")
+
+[node name="quit" type="Button" parent="." unique_id=1225036114]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 426.0
+offset_right = 717.0
+offset_bottom = 519.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_61w2s")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_wa2qn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cyfkl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx0b3")
+text = "Exit"
+
+[connection signal="pressed" from="quit" to="." method="_quit"]
