@@ -24,7 +24,7 @@ var third: int = 2
 var fourth: int = 3
 
 # Variables for player movement and momentum
-@export var JUMP_VELOCITY = -500.0
+@export var JUMP_VELOCITY = -600.0
 const SPEED = 300.0
 const SLIDE_FRICTION = 0.15
 

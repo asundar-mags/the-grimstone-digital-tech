@@ -51,7 +51,7 @@ ui_attack={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-2d/default_gravity=1050.0
+2d/default_gravity=1400.0
 
 [rendering]
 
