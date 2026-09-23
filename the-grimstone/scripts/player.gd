@@ -93,7 +93,7 @@ func _physics_process(delta: float) -> void:
 		if abs(velocity.x) < 1.0:
 			velocity.x = 0
 	
-	# When escape is pressed, user returns to title screen with progress saved, unless the close the game
+	# When escape is pressed, user returns to title screen with progress saved, unless they close the game
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://scenes/main menu.tscn")
 		
