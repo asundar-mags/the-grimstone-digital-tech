@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var coin: Area2D
 @export var timer: Timer
 
+# Variable to define certain shapes that exist on the player to hide them (Polygon 2Ds)
 @export var red: Polygon2D
 @export var blue: Polygon2D
 @export var green: Polygon2D
