@@ -173,7 +173,7 @@ position = Vector2(78, 144)
 shape = SubResource("RectangleShape2D_x3ogk")
 
 [node name="Player" parent="." unique_id=1091708930 node_paths=PackedStringArray("Respawn", "coin") instance=ExtResource("1_ovnwf")]
-position = Vector2(1066, 594)
+position = Vector2(1049, 594)
 Respawn = NodePath("../Spawn")
 coin = NodePath("../Earth coin")
 
@@ -310,7 +310,7 @@ scale = Vector2(0.39, 0.34)
 texture = ExtResource("2_3sf6r")
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=127390454]
-position = Vector2(1066, 594)
+position = Vector2(1049, 594)
 
 [node name="Spikes" type="Area2D" parent="." unique_id=751001400]
 
