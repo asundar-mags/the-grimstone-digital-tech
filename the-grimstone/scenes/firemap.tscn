@@ -61,6 +61,9 @@ size = Vector2(164, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2468u"]
 size = Vector2(22, 72)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iwgvk"]
+radius = 18.248287
+
 [sub_resource type="Gradient" id="Gradient_wrj83"]
 offsets = PackedFloat32Array(0, 0.42207792, 0.83116883)
 colors = PackedColorArray(1, 0, 0, 1, 1, 0.44666666, 0, 1, 1, 1, 0, 1)
@@ -70,9 +73,6 @@ gradient = SubResource("Gradient_wrj83")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 repeat = 1
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_iwgvk"]
-radius = 18.248287
 
 [node name="fire map" type="Node2D" unique_id=1205654782]
 
@@ -409,16 +409,16 @@ polygon = PackedVector2Array(650, 629, 663, 609, 676, 629)
 [node name="Fire coin" type="Area2D" parent="." unique_id=554036653]
 script = ExtResource("3_wrj83")
 
+[node name="Hitbox" type="CollisionShape2D" parent="Fire coin" unique_id=914995967]
+position = Vector2(139, 598)
+shape = SubResource("CircleShape2D_iwgvk")
+
 [node name="Body" type="Polygon2D" parent="Fire coin" unique_id=850813526]
 position = Vector2(50, 1)
 texture = SubResource("GradientTexture2D_ueurx")
 texture_scale = Vector2(1.5, 1.5)
 polygon = PackedVector2Array(89, 579, 82, 580, 76, 584, 72, 590, 71, 596, 72, 603, 75, 609, 82, 614, 90, 615, 98, 613, 103, 608, 107, 601, 107, 593, 103, 585, 97, 580)
 uv = PackedVector2Array(20.935038, 0.8124733, 12.965786, 1.9509373, 6.135, 6.504794, 1.5811424, 13.33558, 0.44267845, 20.166367, 1.5811424, 28.135616, 4.9965353, 34.9664, 12.965786, 40.658722, 22.073502, 41.797188, 31.181217, 39.520264, 36.873535, 33.827934, 41.42739, 25.858688, 41.42739, 16.750973, 36.873535, 7.643258, 30.042751, 1.9509373)
-
-[node name="Hitbox" type="CollisionShape2D" parent="Fire coin" unique_id=914995967]
-position = Vector2(139, 598)
-shape = SubResource("CircleShape2D_iwgvk")
 
 [node name="Border" type="Line2D" parent="Fire coin" unique_id=977425286]
 points = PackedVector2Array(139, 580, 147, 581, 153, 586, 157, 594, 157, 602, 153, 609, 148, 614, 140, 616, 132, 615, 125, 610, 122, 604, 121, 597, 122, 591, 126, 585, 132, 581, 139, 580)
