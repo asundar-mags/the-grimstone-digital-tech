@@ -385,25 +385,25 @@ texture = ExtResource("2_iwgvk")
 
 [node name="Spikes" type="Area2D" parent="." unique_id=694509795]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes" unique_id=1382688254]
+[node name="Spikes #1" type="CollisionPolygon2D" parent="Spikes" unique_id=1382688254]
 polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
 
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Spikes" unique_id=1965861701]
+[node name="Spikes #2" type="CollisionPolygon2D" parent="Spikes" unique_id=1965861701]
 position = Vector2(-173, 0)
 polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Spikes" unique_id=712789031]
+[node name="Spikes #3" type="CollisionPolygon2D" parent="Spikes" unique_id=712789031]
 position = Vector2(-225, 0)
 polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
 
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Spikes" unique_id=1458794504]
+[node name="Spikes #4" type="CollisionPolygon2D" parent="Spikes" unique_id=1458794504]
 position = Vector2(-199, 0)
 polygon = PackedVector2Array(598, 629, 624, 629, 611, 609)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Spikes" unique_id=601025988]
+[node name="Spikes #5" type="CollisionPolygon2D" parent="Spikes" unique_id=601025988]
 polygon = PackedVector2Array(624, 629, 637, 609, 650, 629)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Spikes" unique_id=2065278727]
+[node name="Spikes #6" type="CollisionPolygon2D" parent="Spikes" unique_id=2065278727]
 polygon = PackedVector2Array(650, 629, 663, 609, 676, 629)
 
 [node name="Fire coin" type="Area2D" parent="." unique_id=554036653]
