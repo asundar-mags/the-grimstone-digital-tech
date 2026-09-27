@@ -17,21 +17,22 @@ extends CharacterBody2D
 var jumps_left: int = 1
 
 # Variables used for replacing magic strings
-var neutral_level: String = "neutral"
-var initial: int = 0
-var second: int = 1
-var third: int = 2
-var fourth: int = 3
+const NEUTRAL_LEVEL: String = "neutral"
+const ZERO: int = 0
+const ONE: int = 1
+const TWO: int = 2
+const THREE: int = 3
+const FOUR: int = 4
 
 # Variables for player movement and momentum
-@export var JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -600.0
 const SPEED = 300.0
 const SLIDE_FRICTION = 0.15
 
 # Function that is constantly running
 func _ready() -> void:
 	# Code to make my player spawn at its respective marker
-	if Global.change_spawn and get_parent().name == neutral_level:
+	if Global.change_spawn and get_parent().name == NEUTRAL_LEVEL:
 		global_position = Global.spawn
 	
 	# Red colour on player visibility depending on if fire coin is collected
@@ -59,9 +60,9 @@ func _ready() -> void:
 		yellow.hide()
 	
 	# Validation of whether the game is completed for labels, timers and beating the game overall
-	if Global.coins_collected == 4:
+	if Global.coins_collected == FOUR:
 		Global.game_complete = true
-	elif Global.coins_collected > 4:
+	elif Global.coins_collected > FOUR:
 		Global.game_complete = false
 
 # Function that refers to the physics of the character (movement)
@@ -78,11 +79,11 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			# Regular jump from the ground
 			velocity.y = JUMP_VELOCITY
-			jumps_left -= 1
-		elif jumps_left > 0:
+			jumps_left -= ONE
+		elif jumps_left > ZERO:
 			# Double jump activates once in air
 			velocity.y = JUMP_VELOCITY
-			jumps_left -= 1
+			jumps_left -= ONE
 
 	# Adds movement when keybinds are pressed
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -91,8 +92,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = lerp(velocity.x, 0.0, SLIDE_FRICTION)
 		
-		if abs(velocity.x) < 1.0:
-			velocity.x = 0
+		if abs(velocity.x) < float(ONE):
+			velocity.x = ZERO
 	
 	# When escape is pressed, user returns to title screen with progress saved, unless they close the game
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -106,22 +107,22 @@ func _spike_take_damage(body: CharacterBody2D) -> void:
 
 # Function for redirection of player to fire scene
 func _fire_map_entry(body: CharacterBody2D) -> void:
-	Global.spawn = Global.exits[initial].global_position
+	Global.spawn = Global.exits[ZERO].global_position
 	get_tree().change_scene_to_file("res://scenes/firemap.tscn")
 
 # Function for redirection of player to air scene
 func _air_map_entry(body: CharacterBody2D) -> void:
-	Global.spawn = Global.exits[second].global_position
+	Global.spawn = Global.exits[ONE].global_position
 	get_tree().change_scene_to_file("res://scenes/airmap.tscn")
 
 # Function for redirection of player to water scene
 func _water_map_entry(body: CharacterBody2D) -> void:
-	Global.spawn = Global.exits[fourth].global_position
+	Global.spawn = Global.exits[THREE].global_position
 	get_tree().change_scene_to_file("res://scenes/watermap.tscn")
 
 # Function for redirection of player to earth scene
 func _earth_map_entry(body: CharacterBody2D) -> void:
-	Global.spawn = Global.exits[third].global_position
+	Global.spawn = Global.exits[TWO].global_position
 	get_tree().change_scene_to_file("res://scenes/earthmap.tscn")
 
 # As player leaves fire map, he redirects to neutral level to relative spawn point
@@ -146,28 +147,28 @@ func _air_map_exit(body: CharacterBody2D) -> void:
 
 # The process after player collects the fire coin
 func _fire_coin_collected(body: CharacterBody2D) -> void:
-	Global.coins_collected += 1
+	Global.coins_collected += ONE
 	Global.fire_coin = true
 	body.global_position = Respawn.global_position
 	coin.queue_free()
 
 # The process after player collects the air coin
 func _air_coin_collected(body: CharacterBody2D) -> void:
-	Global.coins_collected += 1
+	Global.coins_collected += ONE
 	Global.air_coin = true
 	body.global_position = Respawn.global_position
 	coin.queue_free()
 
 # The process after player collects the earth coin
 func _earth_coin_collected(body: CharacterBody2D) -> void:
-	Global.coins_collected += 1
+	Global.coins_collected += ONE
 	Global.earth_coin = true
 	body.global_position = Respawn.global_position
 	coin.queue_free()
 
 # The process after player collects the water coin
 func _water_coin_collected(body: CharacterBody2D) -> void:
-	Global.coins_collected += 1
+	Global.coins_collected += ONE
 	Global.water_coin = true
 	body.global_position = Respawn.global_position
 	coin.queue_free()

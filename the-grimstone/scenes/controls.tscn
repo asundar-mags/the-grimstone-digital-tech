@@ -93,9 +93,9 @@ text = "WASD or Arrows - Movement
 Space - Jump (Some levels may have double jump)
 Escape - Back to Main Menu/ Pause
 
-Note: Pressing escape may not save your
-progress but it may save, so use as a pause 
-menu at your own risk.
+Note: Pressing escape will save your progress but 
+it won't save if you quit the game, so make your 
+choices carefully.
 "
 label_settings = SubResource("LabelSettings_cywyo")
 

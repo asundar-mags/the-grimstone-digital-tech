@@ -133,53 +133,53 @@ offset_right = 555.0
 offset_bottom = 609.0
 color = Color(1.2995303e-06, 0, 0.5015646, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=664479128]
+[node name="platform border" type="StaticBody2D" parent="." unique_id=664479128]
 
-[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1079018213]
+[node name="Floor" type="CollisionShape2D" parent="platform border" unique_id=1079018213]
 position = Vector2(576, 648)
 shape = SubResource("RectangleShape2D_t6f32")
 
-[node name="Left Wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=1266928020]
+[node name="Left Wall" type="CollisionShape2D" parent="platform border" unique_id=1266928020]
 position = Vector2(0, 239)
 shape = SubResource("RectangleShape2D_5c3lg")
 
-[node name="Roof" type="CollisionShape2D" parent="StaticBody2D" unique_id=1595907812]
+[node name="Roof" type="CollisionShape2D" parent="platform border" unique_id=1595907812]
 position = Vector2(576, 0)
 shape = SubResource("RectangleShape2D_cko1q")
 
-[node name="Right Wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=954422778]
+[node name="Right Wall" type="CollisionShape2D" parent="platform border" unique_id=954422778]
 position = Vector2(1152, 333.5)
 shape = SubResource("RectangleShape2D_47ork")
 
-[node name="Platform #1" type="CollisionShape2D" parent="StaticBody2D" unique_id=747450185]
+[node name="Platform #1" type="CollisionShape2D" parent="platform border" unique_id=747450185]
 position = Vector2(218.5, 374.5)
 shape = SubResource("RectangleShape2D_h8578")
 
-[node name="Platform #2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1802327856]
+[node name="Platform #2" type="CollisionShape2D" parent="platform border" unique_id=1802327856]
 position = Vector2(66, 401.5)
 shape = SubResource("RectangleShape2D_6cixa")
 
-[node name="Platform #3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1243616873]
+[node name="Platform #3" type="CollisionShape2D" parent="platform border" unique_id=1243616873]
 position = Vector2(66, 190)
 shape = SubResource("RectangleShape2D_6cixa")
 
-[node name="Platform #4" type="CollisionShape2D" parent="StaticBody2D" unique_id=71300762]
+[node name="Platform #4" type="CollisionShape2D" parent="platform border" unique_id=71300762]
 position = Vector2(604, 157.5)
 shape = SubResource("RectangleShape2D_s5khk")
 
-[node name="Platform #5" type="CollisionShape2D" parent="StaticBody2D" unique_id=677945125]
+[node name="Platform #5" type="CollisionShape2D" parent="platform border" unique_id=677945125]
 position = Vector2(767, 299)
 shape = SubResource("RectangleShape2D_s5khk")
 
-[node name="Platform #6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1559815821]
+[node name="Platform #6" type="CollisionShape2D" parent="platform border" unique_id=1559815821]
 position = Vector2(604, 443)
 shape = SubResource("RectangleShape2D_s5khk")
 
-[node name="Platform #7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1345579858]
+[node name="Platform #7" type="CollisionShape2D" parent="platform border" unique_id=1345579858]
 position = Vector2(802.25, 580.25)
 shape = SubResource("RectangleShape2D_ebqmd")
 
-[node name="Platform #8" type="CollisionShape2D" parent="StaticBody2D" unique_id=487852226]
+[node name="Platform #8" type="CollisionShape2D" parent="platform border" unique_id=487852226]
 position = Vector2(524, 580)
 shape = SubResource("RectangleShape2D_ebqmd")
 

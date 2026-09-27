@@ -279,33 +279,33 @@ position = Vector2(330.5, 123.75001)
 scale = Vector2(0.3849998, 0.31500012)
 texture = ExtResource("2_uxwt7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=664479128]
+[node name="Platform borders" type="StaticBody2D" parent="." unique_id=664479128]
 
-[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1079018213]
+[node name="Floor" type="CollisionShape2D" parent="Platform borders" unique_id=1079018213]
 position = Vector2(575.5, 648)
 shape = SubResource("RectangleShape2D_t6f32")
 
-[node name="Left Wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=1504979333]
+[node name="Left Wall" type="CollisionShape2D" parent="Platform borders" unique_id=1504979333]
 position = Vector2(0, 245.5)
 shape = SubResource("RectangleShape2D_uxwt7")
 
-[node name="Roof" type="CollisionShape2D" parent="StaticBody2D" unique_id=393623814]
+[node name="Roof" type="CollisionShape2D" parent="Platform borders" unique_id=393623814]
 position = Vector2(575.5, 0)
 shape = SubResource("RectangleShape2D_2knw2")
 
-[node name="Right Wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=244025305]
+[node name="Right Wall" type="CollisionShape2D" parent="Platform borders" unique_id=244025305]
 position = Vector2(1151, 333.5)
 shape = SubResource("RectangleShape2D_x3bl0")
 
-[node name="Platform #1" type="CollisionShape2D" parent="StaticBody2D" unique_id=865883367]
+[node name="Platform #1" type="CollisionShape2D" parent="Platform borders" unique_id=865883367]
 position = Vector2(511.5, 488)
 shape = SubResource("RectangleShape2D_loohd")
 
-[node name="Platform #2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1083194380]
+[node name="Platform #2" type="CollisionShape2D" parent="Platform borders" unique_id=1083194380]
 position = Vector2(639.5, 324)
 shape = SubResource("RectangleShape2D_b6o5u")
 
-[node name="Platform #3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1584840526]
+[node name="Platform #3" type="CollisionShape2D" parent="Platform borders" unique_id=1584840526]
 position = Vector2(512, 163)
 shape = SubResource("RectangleShape2D_5t7d1")
 
@@ -314,9 +314,8 @@ position = Vector2(103, 594)
 Respawn = NodePath("../Spawn")
 coin = NodePath("../Air coin")
 max_jumps = 2
-JUMP_VELOCITY = -450.0
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=737198682]
+[node name="camera" type="Camera2D" parent="Player" unique_id=737198682]
 limit_left = 0
 limit_top = 0
 limit_right = 1151
@@ -324,7 +323,7 @@ limit_bottom = 648
 
 [node name="Exit" type="Area2D" parent="." unique_id=354882148]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=144007852]
+[node name="portal" type="CollisionShape2D" parent="Exit" unique_id=144007852]
 position = Vector2(-7.5, 560)
 shape = SubResource("RectangleShape2D_62w2o")
 

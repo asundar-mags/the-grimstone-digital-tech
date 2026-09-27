@@ -122,53 +122,53 @@ offset_right = 324.0
 offset_bottom = 154.0
 color = Color(0.24740237, 0.7322632, 0.14523438, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=664479128]
+[node name="platfom border" type="StaticBody2D" parent="." unique_id=664479128]
 
-[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1079018213]
+[node name="Floor" type="CollisionShape2D" parent="platfom border" unique_id=1079018213]
 position = Vector2(576, 648)
 shape = SubResource("RectangleShape2D_t6f32")
 
-[node name="Left Wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=1820503404]
+[node name="Left Wall" type="CollisionShape2D" parent="platfom border" unique_id=1820503404]
 position = Vector2(0, 333.5)
 shape = SubResource("RectangleShape2D_3sf6r")
 
-[node name="Roof" type="CollisionShape2D" parent="StaticBody2D" unique_id=1587461922]
+[node name="Roof" type="CollisionShape2D" parent="platfom border" unique_id=1587461922]
 position = Vector2(576, 0)
 shape = SubResource("RectangleShape2D_i2hp6")
 
-[node name="Right Wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=2003289103]
+[node name="Right Wall" type="CollisionShape2D" parent="platfom border" unique_id=2003289103]
 position = Vector2(1152, 243)
 shape = SubResource("RectangleShape2D_wkyeq")
 
-[node name="Platforms #1" type="CollisionShape2D" parent="StaticBody2D" unique_id=170728007]
+[node name="Platforms #1" type="CollisionShape2D" parent="platfom border" unique_id=170728007]
 position = Vector2(874.5, 530)
 shape = SubResource("RectangleShape2D_x3ogk")
 
-[node name="Platforms #2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1226749781]
+[node name="Platforms #2" type="CollisionShape2D" parent="platfom border" unique_id=1226749781]
 position = Vector2(529, 507)
 shape = SubResource("RectangleShape2D_x3ogk")
 
-[node name="Platforms #3" type="CollisionShape2D" parent="StaticBody2D" unique_id=592955609]
+[node name="Platforms #3" type="CollisionShape2D" parent="platfom border" unique_id=592955609]
 position = Vector2(206, 441)
 shape = SubResource("RectangleShape2D_x3ogk")
 
-[node name="Platforms #4" type="CollisionShape2D" parent="StaticBody2D" unique_id=218720179]
+[node name="Platforms #4" type="CollisionShape2D" parent="platfom border" unique_id=218720179]
 position = Vector2(555, 344)
 shape = SubResource("RectangleShape2D_x3ogk")
 
-[node name="Platforms #5" type="CollisionShape2D" parent="StaticBody2D" unique_id=338700904]
+[node name="Platforms #5" type="CollisionShape2D" parent="platfom border" unique_id=338700904]
 position = Vector2(883, 248)
 shape = SubResource("RectangleShape2D_x3ogk")
 
-[node name="Platforms #6" type="CollisionShape2D" parent="StaticBody2D" unique_id=2126097287]
+[node name="Platforms #6" type="CollisionShape2D" parent="platfom border" unique_id=2126097287]
 position = Vector2(530, 186)
 shape = SubResource("RectangleShape2D_x3ogk")
 
-[node name="Platforms #7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1756264267]
+[node name="Platforms #7" type="CollisionShape2D" parent="platfom border" unique_id=1756264267]
 position = Vector2(266, 144)
 shape = SubResource("RectangleShape2D_x3ogk")
 
-[node name="Platforms #8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1551516353]
+[node name="Platforms #8" type="CollisionShape2D" parent="platfom border" unique_id=1551516353]
 position = Vector2(78, 144)
 shape = SubResource("RectangleShape2D_x3ogk")
 
@@ -185,7 +185,7 @@ limit_bottom = 648
 
 [node name="Exit" type="Area2D" parent="." unique_id=1420174811]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1360003086]
+[node name="portals" type="CollisionShape2D" parent="Exit" unique_id=1360003086]
 position = Vector2(1159, 557.5)
 shape = SubResource("RectangleShape2D_ovnwf")
 
