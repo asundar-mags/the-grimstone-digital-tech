@@ -12,11 +12,11 @@ extends CharacterBody2D
 @export var green: Polygon2D
 @export var yellow: Polygon2D
 
-# Maximum number of jumps
+# Maximum number of jumps and amount of jumps left
 @export var max_jumps: int = 1
 var jumps_left: int = 1
 
-# Variables used for replacing magic strings
+# Constants used for replacing magic strings
 const NEUTRAL_LEVEL: String = "neutral"
 const ZERO: int = 0
 const ONE: int = 1
@@ -90,8 +90,10 @@ func _physics_process(delta: float) -> void:
 	if direction != 0:
 		velocity.x = direction * SPEED
 	else:
+		# Speed of the character slows down in percentiles
 		velocity.x = lerp(velocity.x, 0.0, SLIDE_FRICTION)
 		
+		# Code to avoid the percentage getting irrational or way to small over time, rather stops the character once he is slower than 1.0 px/s
 		if abs(velocity.x) < float(ONE):
 			velocity.x = ZERO
 	
@@ -107,77 +109,78 @@ func _spike_take_damage(body: CharacterBody2D) -> void:
 
 # Function for redirection of player to fire scene
 func _fire_map_entry(body: CharacterBody2D) -> void:
-	Global.spawn = Global.exits[ZERO].global_position
+	Global.spawn = Global.exits[ZERO].global_position # Spawn has been set to first Marker2D in Spawn (Node2D)
 	get_tree().change_scene_to_file("res://scenes/firemap.tscn")
 
 # Function for redirection of player to air scene
 func _air_map_entry(body: CharacterBody2D) -> void:
-	Global.spawn = Global.exits[ONE].global_position
+	Global.spawn = Global.exits[ONE].global_position # Spawn has been set to second Marker2D in Spawn (Node2D)
 	get_tree().change_scene_to_file("res://scenes/airmap.tscn")
 
 # Function for redirection of player to water scene
 func _water_map_entry(body: CharacterBody2D) -> void:
-	Global.spawn = Global.exits[THREE].global_position
+	Global.spawn = Global.exits[THREE].global_position # Spawn has been set to fourth Marker2D in Spawn (Node2D)
 	get_tree().change_scene_to_file("res://scenes/watermap.tscn")
 
 # Function for redirection of player to earth scene
 func _earth_map_entry(body: CharacterBody2D) -> void:
-	Global.spawn = Global.exits[TWO].global_position
+	Global.spawn = Global.exits[TWO].global_position # Spawn has been set to third Marker2D in Spawn (Node2D)
 	get_tree().change_scene_to_file("res://scenes/earthmap.tscn")
 
 # As player leaves fire map, he redirects to neutral level to relative spawn point
 func _fire_map_exit(body: CharacterBody2D) -> void:
-	Global.change_spawn = true
+	Global.change_spawn = true # New spawn point, not original spawn, is true
 	get_tree().change_scene_to_file("res://scenes/neutral level.tscn")
 
 # As player leaves earth map, he redirects to neutral level to relative spawn point
 func _earth_map_exit(body: CharacterBody2D) -> void:
-	Global.change_spawn = true
+	Global.change_spawn = true # New spawn point, not original spawn, is true
 	get_tree().change_scene_to_file("res://scenes/neutral level.tscn")
 	
 # As player leaves water map, he redirects to neutral level to relative spawn point
 func _water_map_exit(body: CharacterBody2D) -> void:
-	Global.change_spawn = true
+	Global.change_spawn = true # New spawn point, not original spawn, is true
 	get_tree().change_scene_to_file("res://scenes/neutral level.tscn")
 
 # As player leaves air map, he redirects to neutral level to relative spawn point
 func _air_map_exit(body: CharacterBody2D) -> void:
-	Global.change_spawn = true
+	Global.change_spawn = true # New spawn point, not original spawn, is true
 	get_tree().change_scene_to_file("res://scenes/neutral level.tscn")
 
-# The process after player collects the fire coin
+# The process after player collects the fire coin*
 func _fire_coin_collected(body: CharacterBody2D) -> void:
-	Global.coins_collected += ONE
-	Global.fire_coin = true
-	body.global_position = Respawn.global_position
-	coin.queue_free()
+	Global.coins_collected += ONE # Amount of coins collected has increased by one
+	Global.fire_coin = true # Fire coin has been collected is true
+	body.global_position = Respawn.global_position # Player is sent to the respawn point (Marker2D)
+	coin.queue_free() # Coin is deleted
 
-# The process after player collects the air coin
+# The process after player collects the air coin*
 func _air_coin_collected(body: CharacterBody2D) -> void:
-	Global.coins_collected += ONE
-	Global.air_coin = true
-	body.global_position = Respawn.global_position
-	coin.queue_free()
+	Global.coins_collected += ONE # Amount of coins collected has increased by one
+	Global.air_coin = true # Air coin has been collected is true
+	body.global_position = Respawn.global_position # Player is sent to the respawn point (Marker2D)
+	coin.queue_free() # Coin is deleted
 
-# The process after player collects the earth coin
+# The process after player collects the earth coin*
 func _earth_coin_collected(body: CharacterBody2D) -> void:
-	Global.coins_collected += ONE
-	Global.earth_coin = true
-	body.global_position = Respawn.global_position
-	coin.queue_free()
+	Global.coins_collected += ONE # Amount of coins collected has increased by one
+	Global.earth_coin = true # Earth coin has been collected is true
+	body.global_position = Respawn.global_position # Player is sent to the respawn point (Marker2D)
+	coin.queue_free() # Coin is deleted
 
-# The process after player collects the water coin
+# The process after player collects the water coin*
 func _water_coin_collected(body: CharacterBody2D) -> void:
-	Global.coins_collected += ONE
-	Global.water_coin = true
-	body.global_position = Respawn.global_position
-	coin.queue_free()
+	Global.coins_collected += ONE # Amount of coins collected has increased by one
+	Global.water_coin = true # Water coin has been collected is true
+	body.global_position = Respawn.global_position # Player is sent to the respawn point (Marker2D)
+	coin.queue_free() # Coin is deleted
 
 # Function for game sequence initiation which starts a timer if criteria is met
 func _game_over_sequence(body: CharacterBody2D) -> void:
 	if Global.game_complete == true and body.is_in_group("player"):
-		timer.start()
+		timer.start() # The timer starts
 
 # Function when timer ends, which relocates player to game over screen
 func _game_over_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
+	

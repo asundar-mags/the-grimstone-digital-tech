@@ -10,7 +10,7 @@ func _ready() -> void:
 	# Collects the spawn points for my player when he leaves areas
 	Global.exits = spawn_points.get_children()
 	
-	# Alternates labels based on if the player is early or finished the game
+	# Alternates labels based on if the player is early or finished the game to give the player a visibility of what to do if stuck
 	if Global.game_complete == true:
 		game_ended.show()
 		game_start.hide()

@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 func _play() -> void:
 	get_tree().change_scene_to_file("res://scenes/neutral level.tscn")
 
-# Function when the button is pressed, options, controls, help and other details are shown
+# Function when the button is pressed, the controls/help menu and other details are shown
 func _options() -> void:
 	get_tree().change_scene_to_file("res://scenes/controls.tscn")
 
